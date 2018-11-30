@@ -2,7 +2,7 @@
 var player = "O";
 
   
-//setzt Buttons zurück
+//reset 
 function resetToDefault() {
     var b1 = document.getElementById("1");
     var b2 = document.getElementById("2");
@@ -59,24 +59,23 @@ function deactivate() {
     b9.disabled = true;
 }
 
-function showTheWinner(gewinner) {
-      //deaktiviert alle Buttons
+function showTheWinner(winner) {
+    //disables all buttons
       deactivate();
     
-      //ersetzt Text
       popuptext = document.getElementById("text");
-      popuptext.innerHTML = gewinner + " wins.";
-    
-      //macht Popup sichtbar
+      popuptext.innerHTML = winner + " wins.";
+
+    //pop up visible
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       pop.style.visibility = "visible";
       overlay.style.visibility ="visible"
 }
 
-//prüft, ob Spiel zu Ende ist
+//check if game is over
 function Check() {
-    //Zustand der Buttons wird ausgelesen
+    //state if buttons is read
     var b1 = document.getElementById("1").value;
     var b2 = document.getElementById("2").value;
     var b3 = document.getElementById("3").value;
@@ -87,19 +86,19 @@ function Check() {
     var b8 = document.getElementById("8").value;
     var b9 = document.getElementById("9").value;
     
-    //obere Reihe
+    //upper row
     if (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) {
         showTheWinner(b1);
     }
-    //linke Spalte
+    //left column
     else if (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
         showTheWinner(b1);
     }
-    //untere Reihe
+    //bottom row
     else if (((b9=="X") || (b9=="O")) && ((b9 == b8) && (b8 == b7))){
         showTheWinner(b9);
     }
-    //rechte Spalte
+    //right column
     else if (((b9=="X") || (b9=="O")) && ((b9 == b6) && (b6 == b3))){
       showTheWinner(b9);
     }
@@ -111,18 +110,18 @@ function Check() {
     else if (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
       showTheWinner(b2);
     }
-    //1-9 Diagonale
+    //1-9 Diagonal
     else if (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5== b9))){
       showTheWinner(b1);
     }
-    //7-3 Diagonale
+    //7-3 Diagonal
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
       showTheWinner(b7);
     }
     //unentschieden
-//     else {
-//     alert("Unetschieden");
-//     }
+   else {
+     alert("draw");
+   }
     }
 
 function put(x, player) {
