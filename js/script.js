@@ -114,15 +114,24 @@ function Check() {
     else if (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5== b9))){
       showTheWinner(b1);
     }
-    //7-3 Diagonal
+    //7-3 Diagonale
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
       showTheWinner(b7);
     }
-    //unentschieden
-   else {
-     alert("draw");
-   }
-    }
+    else {
+        if(b1!=='' && 
+	       b2!=='' && 
+	       b3!=='' &&  
+           b4!=='' && 
+           b5!=='' && 
+           b6!=='' && 
+           b7!=='' && 
+           b8!=='' && 
+           b9!==''){
+        	alert("draw");
+       }
+    }    
+}
 
 function put(x, player) {
     if (x==1) {
