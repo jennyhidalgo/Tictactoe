@@ -73,6 +73,20 @@ function showTheWinner(winner) {
       overlay.style.visibility ="visible"
 }
 
+function showTheDraw(draw) {
+    //disables all buttons
+      deactivate();
+    
+      popuptext = document.getElementById("text");
+      popuptext.innerHTML = "DRAW";
+
+    //pop up visible
+      var pop = document.getElementById("popup");
+      var overlay = document.getElementById("overlay");
+      pop.style.visibility = "visible";
+      overlay.style.visibility ="visible"
+}
+
 //check if game is over
 function Check() {
     //state if buttons is read
@@ -118,7 +132,7 @@ function Check() {
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
       showTheWinner(b7);
     }
-    
+
     else {
         if(b1!=='' && 
 	       b2!=='' && 
@@ -129,7 +143,7 @@ function Check() {
            b7!=='' && 
            b8!=='' && 
            b9!==''){
-        	alert("draw");
+        	showTheDraw(b1, b2, b3, b4, b5, b6, b7, b8, b9);
        }
     }    
 }
