@@ -118,6 +118,7 @@ function Check() {
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
       showTheWinner(b7);
     }
+    
     else {
         if(b1!=='' && 
 	       b2!=='' && 
