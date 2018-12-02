@@ -73,7 +73,7 @@ function showTheWinner(winner) {
       overlay.style.visibility ="visible"
 }
 
-function showTheDraw(draw) {
+function showTheDraw() {
     //disables all buttons
       deactivate();
     
@@ -143,7 +143,7 @@ function Check() {
            b7!=='' && 
            b8!=='' && 
            b9!==''){
-        	showTheDraw(b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        	showTheDraw();
        }
     }    
 }
